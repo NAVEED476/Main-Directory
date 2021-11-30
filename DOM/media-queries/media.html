@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #one{
+            width:40%;
+            height: 600px;
+            margin:auto; 
+    
+        }
+        #two{
+            width:40%;
+            height: 600px;
+            margin:auto;   
+            overflow: hidden;
+
+        }
+        #main{
+            display: flex;
+        }
+        .inner1{
+            width:100%;
+            height: 70%;
+            background-color: brown;
+            margin: 5px;
+            overflow:hidden;
+        }
+        .img1{
+            width: 100%;
+            height:60%;
+        }
+        .outer1{
+            width: 100%;
+            margin:5px;
+            height: 29%;
+            display: flex;
+        }
+        .img2{
+            width:100%;
+            height:100%;
+        }
+        .outerlast{
+            width:30%;
+        }
+        .lastone{
+            width:60%;
+            padding: 0px 20px;
+            overflow: scroll;
+
+        }
+        .over,.over1{
+            overflow: hidden;
+        }
+
+        @media(max-width:600px){
+            #main{
+                display: grid;
+            }
+        }
+        @media (max-width:1000px){
+            #two{
+                display: grid;
+                grid-template-columns: auto auto;
+                grid-template-rows: auto auto;
+            }
+            #main{
+                display: grid;
+            }
+        }
+        
+        
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="one">
+            <div class="inner1">
+                <img class="img1" src="https://images.unsplash.com/photo-1632418128534-06a848984ab5?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt="">
+                <h1>nice picture</h1>
+                <h3>just awesome</h3>
+                <p class="over">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap </p>
+            </div>
+            <div class="outer1">
+                <div class="outerlast">
+                    <img class="img2" src="https://images.unsplash.com/photo-1632309812723-2f350b53c50e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80" alt="">
+
+                </div>
+                <div class="lastone">
+                    <h1>Nothing to say</h1>
+                    <p class="over">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed </p>
+                </div>
+            </div>
+        </div>
+        <div id="two">
+            <div class="outer1">
+                <div class="outerlast">
+                    <img class="img2" src="https://images.unsplash.com/photo-1632309812723-2f350b53c50e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80" alt="">
+
+                </div>
+                <div class="lastone">
+                    <h1>Nothing to say</h1>
+                    <p class="over1">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed </p>
+                </div>
+            </div>
+            <div class="outer1">
+                <div class="outerlast">
+                    <img class="img2" src="https://images.unsplash.com/photo-1632309812723-2f350b53c50e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80" alt="">
+
+                </div>
+                <div class="lastone">
+                    <h1>Nothing to say</h1>
+                    <p class="over1">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed </p>
+                </div>
+            </div>
+            <div class="outer1">
+                <div class="outerlast">
+                    <img class="img2" src="https://images.unsplash.com/photo-1632309812723-2f350b53c50e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80" alt="">
+
+                </div>
+                <div class="lastone">
+                    <h1>Nothing to say</h1>
+                    <p class="over1">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

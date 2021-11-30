@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex1</title>
+    <style>
+        
+        #cont{
+            max-width:400px;
+            margin:auto;
+            background-color:silver;
+            
+        }
+        .rimg{
+            padding:1% 23%;
+            
+        }
+        h2{
+            text-align: center;
+            padding: 10px;
+        }
+        .styling{
+            color:#1a237e;
+            text-align: center;
+
+        }
+    
+        #cont2,#last{
+            display:flex;
+            max-width:1000px;
+            margin: auto;
+        }
+        .rimg2{
+            color:red;
+            padding: 5px 30px;
+        }
+        h3{
+            padding: 0px 30px;
+        }
+        #last{
+            max-width: 1300px;
+            background-color: #f4511e;
+            height: 150px;
+            margin: auto;padding: 1px 30px;
+        }
+        .mar{
+            width:2px;
+            height:90px;
+            background-color: black; 
+            padding:5px ;
+            float:right;
+        }
+        .left{
+            max-width: 60%;
+            
+        }
+        #latest{
+            text-align:right;
+        }
+    </style>
+</head>
+<body>
+    <div id="cont">
+        <div>
+            <img  class="rimg" src="https://masai-course.s3.ap-south-1.amazonaws.com/resources/images/linus.jpg"alt=""/>
+            <strong><h1 class="styling">Linus Torvalds</h1></strong>
+            <h2>The creator of linux and Git</h2>
+        </div>
+    </div>
+    <div id="cont2">
+        <div>
+            <img src="https://masai-course.s3.ap-south-1.amazonaws.com/resources/images/khan.jpg" alt=""></div>
+        <div>
+            <h1 class="rimg2">SalKhan</h1>
+            <h3>
+                Salman khan is the founder of the khan acadamy which has a mission of providing free world class education for any one,anywhere 
+            </h3>
+        </div>
+       
+        
+    </div>
+    <div id="last">
+        <div>
+            <h1>KenThomson</h1>
+            <h4 class="left">Designed and implimented the original operationg system  align="left"</h4>
+        </div>
+        <p style="width: 4px; height:120px; background-color: black;vertical-align: middle;"></p>
+        <div id="latest">
+            <h1>Dennis Ritchie</h1>
+            <h4 >the creator of c programming languge </h4>
+        </div>
+    </div>
+    
+</body>
+</html>

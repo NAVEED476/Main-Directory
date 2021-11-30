@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cartpage</title>
+</head>
+<style>
+    #container{
+
+        width:600px;
+        padding: 10px 30px 10px 30px;
+        display: grid;
+
+        grid-template-columns: 30% 30% 30% 30%;
+        gap:2%
+    }
+    img{
+        width:80%
+    }
+</style>
+<body>
+    <h1>cart-Page</h1>
+    <div id="container"></div>
+</body>
+</html>
+</html>
+
+<script>
+
+    var parent=document.getElementById("container")
+    let cart1=JSON.parse(localStorage.getItem("cart"))
+
+function showproducts(){
+
+cart1.forEach(function(product){
+
+
+let div=document.createElement('div')
+
+
+
+let img=document.createElement('img')
+
+img.src=product.img
+
+let name=document.createElement('p')
+
+name.innerText=product.name;
+
+let price=document.createElement('p')
+
+price.innerText=product.price
+
+div.append(img,name,price)
+parent.append(div)
+})
+}
+showproducts()
+</script>

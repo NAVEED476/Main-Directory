@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color change</title>
+</head>
+<body>
+    <button id="changecolor">click here to change the color</button>
+
+</body>
+</html>
+
+<script>
+
+    let changebutton=document.getElementById('changecolor')
+
+    function random(number){
+        return Math.floor(Math.random()*number)
+    }
+
+    function switchcolor(){
+        var randomcolor = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+        changebutton.style.backgroundColor=randomcolor
+    }
+
+    changebutton.addEventListener("click",switchcolor);
+</script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouse</title>
+    <style>
+        #main{
+            width: 500px;
+            height: 400px;
+            background-color: aquamarine;
+        }
+        button{
+            margin-top: 60%;
+            margin-left: 70%;
+            width:100px;
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+
+        <div id="main">
+            <button id="play">Submit</button>
+        </div>
+  
+</body>
+</html>
+
+<script>
+
+
+    let btn=document.getElementById('play')
+
+    btn.addEventListener('mouseenter',changeyellow)
+
+    btn.addEventListener('mouseleave',changered)
+
+
+    function changeyellow(){
+        btn.style.backgroundColor="yellow"
+    }
+    function changered(){
+        btn.style.backgroundColor="red"
+    }
+</script>

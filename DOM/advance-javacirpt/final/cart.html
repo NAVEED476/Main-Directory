@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart-Page</title>
+</head>
+<style>
+    #container{
+
+        width:600px;
+        padding: 10px 30px 10px 30px;
+        display: grid;
+
+        grid-template-columns: 30% 30% 30% 30%;
+        gap:2%
+    }
+    img{
+        width:80%
+    }
+</style>
+<body>
+    <h1>cart-Page</h1>
+    <a href="cartpage.html"><button>go to cart</button></a>
+    <div id="container"></div>
+    
+</body>
+</html>
+
+<script>
+    var cont=document.getElementById("container")
+
+    var data=[
+        {
+            img:"https://staticimg.titan.co.in/Tanishq/Catalog/500484SKAAAA09_1.jpg?impolicy=pqmed&imwidth=640",
+            name:"gold1",
+            price :"1", 
+        },
+        {
+            img:"https://staticimg.titan.co.in/Tanishq/Catalog/500925SIAAAA09_1.jpg?impolicy=pqmed&imwidth=640",
+            name:"gold2",
+            price:"2"
+        },
+        {
+            img:"https://staticimg.titan.co.in/Tanishq/Catalog/500934SBAAAA02.jpg?impolicy=pqmed&imwidth=640",
+            name:"gold3",
+            pice:"3"
+
+        },
+        {
+            img:"https://staticimg.titan.co.in/Tanishq/Catalog/500484SKAAAA09_1.jpg?impolicy=pqmed&imwidth=640",
+            name:"gold1",
+            price :"1"
+        },
+        {
+            img:"https://staticimg.titan.co.in/Tanishq/Catalog/500925SIAAAA09_1.jpg?impolicy=pqmed&imwidth=640",
+            name:"gold2",
+            price:"2"
+        },
+        {
+            img:"https://staticimg.titan.co.in/Tanishq/Catalog/500934SBAAAA02.jpg?impolicy=pqmed&imwidth=640",
+            name:"gold3",
+            pice:"3"
+
+        },
+        {
+            img:"https://staticimg.titan.co.in/Tanishq/Catalog/500925SIAAAA09_1.jpg?impolicy=pqmed&imwidth=640",
+            name:"gold2",
+            price:"2"
+        },
+        {
+            img:"https://staticimg.titan.co.in/Tanishq/Catalog/500934SBAAAA02.jpg?impolicy=pqmed&imwidth=640",
+            name:"gold3",
+            pice:"3"
+
+        }
+
+
+    ]
+
+
+    function showproducts(){
+
+        data.forEach(function(product){
+
+
+        let div=document.createElement('div')
+
+
+
+        let img=document.createElement('img')
+
+        img.src=product.img
+
+        let name=document.createElement('p')
+
+        name.innerText=product.name;
+
+        let price=document.createElement('p')
+
+        price.innerText=product.price
+
+
+        let add_btn=document.createElement('button')
+
+        add_btn.innerText="Add to Cart"
+
+        add_btn.onclick=function(){
+            add_to(product)
+        }
+
+        div.append(img,name,price,add_btn)
+        cont.append(div) 
+    })
+    }
+    showproducts()
+
+
+
+
+    function add_to(p){
+        var cart_items=JSON.parse(localStorage.getItem('cart'))
+
+        cart_items.push(p)
+
+        localStorage.setItem('cart',JSON.stringify(cart_items))
+    }
+</script>

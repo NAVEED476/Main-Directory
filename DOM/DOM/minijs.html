@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Js</title>
+</head>
+<body>
+   <!-- <div id="main">
+    <button id="Obj()">Objects</button>
+    <button id="arr()">Arrays</button>
+    <button id="func()">Functions</button>
+    <button id="str()">Strings</button>
+    <button id="num()">Numbers</button>
+    <button id="nu()">null</button>
+    <button id="undefine()">undefined</button>
+   </div> -->
+
+   <input type="text" id="name">
+   <button onclick="addname()">submit</button>
+</body>
+</html>
+<script>
+
+    function addname(){
+        var friend=document.getElementById('name').value
+
+        var p= document.createElement('p')
+
+        p.innerText=friend
+
+        document.body.append(p)
+    }
+    
+    // function obj(){
+    //     var obj1=document.getElementById("main")
+    //     var p=document.createElement('p')
+    //     p.innerText=obj1
+
+    //     document.body.append(p)
+    // }
+
+</script>

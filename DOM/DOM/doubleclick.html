@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double click</title>
+</head>
+<body>
+    <button id="doubleclick">double click here to change the color</button>
+</body>
+</html>
+<script>
+    let double=document.getElementById("doubleclick")
+
+
+    function random(number){
+        return Math.floor(Math.random()*number)
+    }
+
+    function switchcolor(){
+        var randomcolor = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+        double.style.backgroundColor=randomcolor;
+    }
+    double.addEventListener('dblclick',switchcolor)
+</script>

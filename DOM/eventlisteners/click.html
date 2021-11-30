@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>click</title>
+    <style>
+        #target{
+            width: 800px;
+            height: 100px;
+            background-color: aqua;
+            text-align: center;
+            padding-top: 20px;
+
+        }
+    </style>
+</head>
+<body>
+    <h1 id="target"></h1>
+    <button id="btn">cHANGE</button>
+</body>
+</html>
+
+<script>
+
+let c=0 
+  var  btn = document.getElementById('btn')
+  btn.addEventListener('click',nnd)
+
+  let target=document.getElementById('target')
+
+  target.addEventListener('mouseenter',changered)
+
+  target.addEventListener('mouseleave',changewhite)
+
+  function nnd(){
+     traget.textContent="ankjdnc.skcsdjcs" +c;
+     c++;
+  }
+
+
+
+  function changered(){
+      target.style.backgroundColor="red";
+  }
+
+  function changewhite(){
+      target.style.backgroundColor="white";   
+  }
+
+</script>

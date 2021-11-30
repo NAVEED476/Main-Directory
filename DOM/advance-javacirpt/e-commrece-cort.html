@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Page</title>
+</head>
+<style>
+  #products {
+    width: 10% 20% 10% 20%;
+    height: 300px;
+
+
+
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-gap: 6%;
+    justify-content: center;
+  }
+
+  img {
+    width: 80%;
+  }
+</style>
+
+<body>
+  <h1>welcome to Cart</h1>
+  <div id="products"></div>
+</body>
+
+</html>
+<script>
+
+  var home = document.getElementById("products")
+  let cart = JSON.parse(localStorage.getItem("cart"))
+
+  function all_products() {
+
+
+    cart.forEach(function (product) {
+
+
+      let div = document.createElement('div')
+
+      let img = document.createElement("img")
+
+      img.src = product.img
+
+      let price = document.createElement("p")
+
+      price.textContent = product.price
+
+      let name = document.createElement("p")
+
+      name.textContent = product.name
+
+
+      let click_button = document.createElement("button")
+
+      click_button.innerText = "click add to cart"
+
+      click_button.onclick = function () {
+
+      }
+
+      div.append(img, name, price, click_button)
+      home.append(div)
+    })
+  }
+
+  all_products()
+</script>

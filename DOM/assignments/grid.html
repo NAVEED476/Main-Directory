@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid</title>
+    <style>
+        div>div{
+            background-color: blueviolet;
+            margin:5px;
+            width:100%;
+            height: 100px;
+        }
+        #container,#cont{
+            display:grid;
+            
+        }
+        #one{
+            background-color:yellow;
+            height: 60px;
+            font-size: 32px;
+            text-align: center;
+        }
+        #two{
+            background-color:red ;
+        }
+        #three{
+            background-color:rgb(40, 161, 40) ;
+        }
+        #four{
+            background-color: burlywood;
+        }
+        #container{
+            width:100%
+        }
+        @media (min-width:500px){
+            #one{
+                width:100%;
+            }
+            div>div{
+                width:50%;
+            }
+            #cont{
+                grid-template-rows:auto;
+            }
+        }
+        @media (min-width:600px){
+            #container{
+                width:100%;
+        
+            }
+            div>div{
+                width:80%;
+                margin:20px;
+                padding:0px 40px;
+            }
+            #cont{
+                grid-template-columns:500px 500px;
+            }
+        }
+        @media(min-width:1024px){
+            #cont{
+                display: flex;
+            }
+            #container{
+                width:100%;
+            }
+        }
+       
+    
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="one">Navigation</div>
+
+    </div>
+    <div id="cont">
+                
+        <div id="two">box2</div>
+        <div id="three">box3</div>
+        <div id="four">box4</div>
+        <div id="five">box1</div>
+    </div>
+</body>
+</html>

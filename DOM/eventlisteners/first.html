@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new</title>
+</head>
+<body>
+    <button id="add" onclick="add()">add_New</button>
+    <br/>
+    <div>hover on me</div>
+    <br/>
+    <a href="www.masaischool.com">masai website</a>
+</body>
+
+</html>
+
+<script>
+    var addbtn=document.getElementById('add')
+    count=1;
+    addbtn.addEventListener("click",function(){
+        var body=document.querySelector('body')
+        var div=document.createElement("div")
+        div.textContent="product"+ count++
+        body.insertBefore(div,addbtn)
+    })
+
+
+    var alink=document.querySelector('a')
+    alink.addEventListener("click",function(e){
+        e.preventDefault()
+        console.log(event.target)
+
+        var body=document.querySelector('body')
+        var p=document.createElement('p')
+        p.textContent="prevented from going to the website"+Date()
+        body.appendChild(p)
+    })
+
+    var div=document.querySelector('div')
+    div.addEventListener('mouseover', function(e){
+        console.log(e.target)
+
+        var body=document.querySelector('body')
+        var p=document.createElement('p')
+        p.textContent="hovered on me "+Date()
+
+
+        body.append(p)
+    })
+</script>

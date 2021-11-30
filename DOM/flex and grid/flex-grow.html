@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-grow</title>
+    <style>
+        div>div{
+            width:100px;
+            height:100px;
+            background-color: blue;
+            margin: 10px;
+        }
+        #one,#two,#three{
+            max-width: 600px;
+            display: flex;
+            -ms-flex-align: stretch;
+        }
+        div>div:nth-child(2){
+            flex-grow: 1;
+        }
+        div>div:nth-child(1){
+            flex-wrap: 1;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="one">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <div id="two">
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+    <div id="three">
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+</body>
+</html>

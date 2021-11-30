@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #products{
+            padding :10% 5% 10% 5%;
+            margin: auto;
+            height:600px;
+            border: 5px solid rgb(14, 12, 12);
+
+
+            display: grid;
+            grid-template-columns: 15% 20% 20%15% 20% ;
+            grid-gap:5%;
+            justify-content: center;
+        }
+        img{
+            width:80%;
+        }
+    </style>
+</head>
+<body>
+    <h1>local storage</h1>
+
+    <a href="advance-cart.html"><button>Go to cart</button></a>
+
+    <div id="products">
+
+    </div>
+</body>
+</html>
+    <script>
+        let data = [
+    {
+      name: "shoes",
+      price: "2000",
+      img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.sweatband.com%2Fasics_gel-zaraca_4_mens_running_shoes_ss16_asics_gel-zaraca_4_mens_running_shoes-blue-silver-black_angle_view_2000x2000.jpg&f=1&nofb=1",
+    },
+    {
+      name: "Football",
+      price: "1347",
+      img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pixel4k.com%2Fwp-content%2Fuploads%2F2018%2F10%2Fsoccer-ball-football-lawn-grass-4k_1540063065.jpg&f=1&nofb=1",
+    },
+    {
+      name: "Watch",
+      price: "9999",
+      img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftimeandtidewatches.com%2Fwp-content%2Fuploads%2F2014%2F09%2FMANOFSTEELHaighHastingsWatch-M2-Diver.jpeg&f=1&nofb=1",
+    },
+    {
+      name: "shoes",
+      price: "2000",
+      img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.sweatband.com%2Fasics_gel-zaraca_4_mens_running_shoes_ss16_asics_gel-zaraca_4_mens_running_shoes-blue-silver-black_angle_view_2000x2000.jpg&f=1&nofb=1",
+    },
+    {
+      name: "Football",
+      price: "1347",
+      img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pixel4k.com%2Fwp-content%2Fuploads%2F2018%2F10%2Fsoccer-ball-football-lawn-grass-4k_1540063065.jpg&f=1&nofb=1",
+    },
+    {
+      name: "Watch",
+      price: "9999",
+      img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftimeandtidewatches.com%2Fwp-content%2Fuploads%2F2014%2F09%2FMANOFSTEELHaighHastingsWatch-M2-Diver.jpeg&f=1&nofb=1",
+    },
+    {
+      name: "shoes",
+      price: "2000",
+      img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.sweatband.com%2Fasics_gel-zaraca_4_mens_running_shoes_ss16_asics_gel-zaraca_4_mens_running_shoes-blue-silver-black_angle_view_2000x2000.jpg&f=1&nofb=1",
+    },
+    {
+      name: "Football",
+      price: "1347",
+      img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pixel4k.com%2Fwp-content%2Fuploads%2F2018%2F10%2Fsoccer-ball-football-lawn-grass-4k_1540063065.jpg&f=1&nofb=1",
+    },
+    {
+      name: "Watch",
+      price: "9999",
+      img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftimeandtidewatches.com%2Fwp-content%2Fuploads%2F2014%2F09%2FMANOFSTEELHaighHastingsWatch-M2-Diver.jpeg&f=1&nofb=1",
+    },
+  ];
+
+
+  let parent=document.getElementById("products")
+  function show_products(){
+
+    data.forEach(function(product){
+     
+
+
+
+
+      let div=document.createElement("div");
+
+
+      let img=document.createElement("img");
+      
+      img.src=product.img
+
+      let price=document.createElement("p")
+
+      product.price.textContent=product.price
+
+      let product_name=document.createElement("p")
+
+      product.name.textContent=product.product_name;
+
+      let add_to_cart_btn=document.createElement("button")
+
+      add_to_cart_btn.innerText="add to cart"
+
+      add_to_cart_btn.onclick=function(){
+        add_to_cart(product)
+      };
+
+      div.append(img,product_name,price,add_to_cart_btn)
+
+      parent.append(div)
+  })
+
+
+}
+show_products();
+
+//console.log(localStorage.getItem("cart"))
+if(localStorage.getItem("cart")===null){
+    localStorage.setItem("cart",JSON.stringify([]));
+}
+
+
+     function add_to_cart(p){
+       let products_cart =JSON.parse(localStorage.getItem("cart"))
+
+
+       products_cart.push(p)
+       localStorage.setItem("cart",JSON.stringify(products_cart))
+
+       console.log("products_cart:"+products_cart)
+         
+     }
+    </script>
+

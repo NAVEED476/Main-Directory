@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zigzag_grid</title>
+    <style>
+       
+      div > div {
+          background-color: rgb(9, 85, 95);
+          padding:5px;
+          border-radius: 8%;
+      }
+      #cont{
+          width:700px; 
+          margin:auto;
+          margin-top: 10%;
+          border:1px ;
+         
+          display: grid;
+          gap :40px;
+          grid-template-columns:  100px 100px 100px 100px ;
+          grid-template-rows: 100px 100px 100px 100px ;
+          border-radius: 8%;
+      }
+      div > div:nth-child(1)  {
+          background-color: rgb(9, 85, 95);
+          grid-area: 1/2/2/4;
+          border-radius: 8%;
+      }
+      div > div:nth-child(2){
+        background-color: rgb(9, 85, 95);
+          grid-area: 2/1/2/3;
+          border-radius: 8%;
+
+      }
+      div > div:nth-child(3){
+        background-color: rgb(9, 85, 95);
+          grid-area: 3/3/3/5;
+          border-radius: 8%;
+
+      }
+    </style>
+</head>
+<body>
+    <div id = "cont">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <!-- <div>2</div>
+        <div>3</div>
+        <div>4</div> -->
+
+    </div>
+    
+</body>
+</html>
