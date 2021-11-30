@@ -1,0 +1,42 @@
+#cont{
+   
+    display: grid;
+    grid-gap: 10px 10px;
+    grid-template-areas:
+    "a a b"
+    "a a c"
+    "a a e"
+    "f f g"
+}
+#cont>div{
+    background-color: chartreuse;
+    font-size: 32px;
+    color: red;
+}
+
+
+#cont>div:nth-child(1){
+    
+    grid-area: a;
+    
+    background-color: darkblue;
+    color: white;
+}
+#cont>div:nth-child(2){
+    grid-area: b;
+}
+#cont>div:nth-child(3){
+    grid-area: c;
+}
+#cont>div:nth-child(4){
+    grid-area: e;
+}
+
+#cont>div:nth-child(5){
+    grid-area: f;
+    
+}
+#cont>div:nth-child(6){
+    grid-area: g;
+    
+}

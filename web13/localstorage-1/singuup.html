@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Sign up</h1>
+    <input id="email" type="email" placeholder="enter your email">
+    <input id="pass" type="password" placeholder="enter your password">
+    <input id="name" type="text" placeholder="enter u r name">
+    <input id="number" type="number" placeholder="enter  u r mobile number">
+    <button>Submit</button>
+</body>
+
+</html>
+<script>
+
+    var userarr = JSON.parse(localStorage.getItem("userdata")) || [];
+    document.querySelector("button").addEventListener("click", signup)
+
+
+    function signup() {
+        var email = document.getElementById("email").value
+        var pass = document.getElementById("pass").value
+        var name = document.getElementById("name").value
+        var number = document.getElementById("number").value
+
+
+
+        var user = {
+            email: email,
+            passWord: pass,
+            user_name: name,
+            number: number
+        }
+        userarr.push(user)
+
+        localStorage.setItem("userdata", JSON.stringify(userarr))
+
+
+        window.location.href = "signin.html"
+    }
+</script>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bozaz</title>
+    <style>
+        #in{
+            background-color: blue;
+            color: white;
+            padding: 10px;
+            margin-top: 30px;
+        }
+        #in:hover{
+            font-size: 20px;
+        }
+        h1{
+            font: 30px;
+            color: blue;
+        }
+        span{
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        input{
+            padding: 10px;
+        }
+        select{
+            padding: 15px 20px;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        #maindiv{
+            display:flex;
+            
+        }
+        .two{
+            
+            height: 100px;
+            margin-left:200px;
+        }
+        tr,th{
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+            <h1>Add Product</h1>
+            <form id="main">
+                <select name="Category" id="category">
+                    <option value="">Home appliances</option>
+                    <option value="">Electronics</option>
+                    <option value="">Furniture</option>
+                    <option value="">Home appliances</option>
+                    <option value="">Books</option>
+                </select>
+                <br/>
+                <span>Product title</span><br/>
+                <input id="name" type="text" placeholder=""Product title><br/>
+                <span>Description</span><br/>
+                <input id="discription" type="text" placeholder="home"><br/>
+                <span>Price</span><br/>
+                <input id="price" type="number" placeholder="Price"><br/>
+                <input id="in" type="submit" value="submit">
+            </form>
+            
+
+            <h1>Product Info</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Category</th>
+                        <th>Title</th>
+                        <th>discription</th>
+                        <th>price</th>
+
+                    </tr>
+                </thead>
+                <tbody id="n">
+
+                </tbody>
+            </table>
+</body>
+</html>
+
+<script>
+    var shoppingList=JSON.parse(localStorage.getItem("items"))||[]
+
+
+    document.querySelector("#main").addEventListener("submit",function(event){
+        event.preventDefault();
+        var category=document.getElementById("category").value;
+        var discription=document.getElementById("discription").value;
+        var name=document.getElementById("name").value;
+        var price=document.getElementById("price").value;
+
+
+        var list={
+            category:category,
+            name: name,
+            discription:discription,
+            price:price,
+
+        }
+        //console.log(list)
+        shoppingList.push(list)
+        console.log(shoppingList)
+        localStorage.setItem("items", JSON.stringify(shoppingList))
+        
+    
+
+    function displayItems(shoppingList){
+
+
+        shoppingList.map(function(item){
+            var tr=document.createElement("tr")
+
+            var td1=document.createElement("td")
+            td1.textContent=item.category
+            var td2=document.createElement("td")
+            td2.textContent=item.name
+            var td3=document.createElement("td")
+            td3.textContent=item.discription
+            var td4=document.createElement("td")
+            td4.textContent=item.price
+
+            tr.append(td1,td2,td3,td4)
+
+        
+            
+        })
+        document.querySelector("#n").append(tr)
+    }
+    
+})
+</script>

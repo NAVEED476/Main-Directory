@@ -1,0 +1,94 @@
+#main{
+    width: 80%;
+    height: 500px;
+    margin: auto;
+}
+
+h4{
+    margin-top: 0px;
+    margin-left: 5px;
+}
+#cont1{
+    margin-top: 20px;
+    width: 99%;
+    height: 45%;
+    
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+    gap: 1% ;
+}
+#cont2{
+   
+    width: 99%;
+    height: 48%;
+    
+}
+.one{
+    height: 60%;
+    border: 1px solid black;
+}
+.one>img{
+    width: 99.9%;
+    height: 40%;
+}
+.a{
+    margin-left: 10px;
+    line-height: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.r{
+    margin-left: 10px;
+    color: blueviolet;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+#cont2{
+    display: grid;
+    grid-template-areas:
+    "a b c"
+    "d e f";
+}
+.item1,.item2,.item3,.item4,.item5,.item6{
+    display: flex;
+    margin-left: 5px;
+    margin-top: 20px;
+    width: 90%;
+    height: 100px;
+    border: 1px solid black;
+}
+
+.item1{
+    grid-area: a;
+}
+.item2{
+    grid-area: b;
+}
+.item3{
+    grid-area: c;
+}
+.item4{
+    grid-area: d;
+}
+.item5{
+    grid-area: e;
+}
+.item6{
+    grid-area: f;
+}
+.para{
+    margin-left: 10px;
+    
+    font-size: 17px;
+    width:90%;
+    height: 70%;
+   
+
+}
+.arrow{
+    color: blue;
+    margin-top: 15%;
+    font-weight: 50px;
+
+}
+

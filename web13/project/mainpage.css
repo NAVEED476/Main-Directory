@@ -1,0 +1,14 @@
+#maindiv{
+    display:flex;
+    padding: 10px 10px 10px 10px;
+    
+
+}
+
+.one>input{
+   font-size: 15px;
+   padding-right: 200px;
+   background-color: white;
+   box-sizing: content-box;
+   
+}

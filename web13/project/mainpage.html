@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mainpage</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="mainpage.css">
+</head>
+<style>
+    .car{
+       font-size:20px;
+    }
+    .fas{
+        color: red;
+        margin-left: 10px;
+        border: 1px solid blue;
+        padding: 3px;
+        
+    }
+    .fas:hover{
+        background-color: blue;
+    }
+</style>
+<body>
+   <div id="maindiv">
+       <div class="one">
+            <input type="search" placeholder="search for the items..."aria-label="Search through site content">
+            <i class="fas fa-search" id="myone"></i>
+            
+       </div>
+       <div class="two"></div>
+       <div class="three"></div>
+       <div class="four"></div>
+   </div>
+</body>
+</html>
+<script>
+    document.getElementById("myone").addEventListener("click",fun)
+    var count=0
+    function fun(){ console.log("see the msz")
+        if(count<4){
+            console.log("hi")
+        }
+    }
+</script>

@@ -1,0 +1,53 @@
+#layout {
+    display: grid;
+    grid-template-areas: "nav nav nav" "lb lb rb1" "lb lb rb2" "lb lb rb3";
+    gap: 10px;
+  }
+
+  #nav {
+    grid-area: nav;
+    background-color: yellow;
+    height: 50px;
+  }
+  #lb {
+    grid-area: lb;
+    background-color: red;
+    height: 500px;
+    margin-right: 15px;
+  }
+  #rb-1 {
+    grid-area: rb1;
+  }
+  #rb-2 {
+    grid-area: rb2;
+  }
+  #rb-3 {
+    grid-area: rb3;
+  }
+  .right {
+    background-color: green;
+  }
+
+  @media screen and (min-width: 500px) and (max-width: 768px) {
+    #layout {
+      grid-template-areas: "nav nav nav" "lb lb lb" "lb lb lb" "rb1 rb2 rb3";
+    }
+    .right {
+      height: 200px;
+    }
+    #lb {
+      height: 400px;
+    }
+  }
+
+  @media screen and (min-width: 0px) and (max-width: 499px) {
+    #layout {
+      grid-template-areas: "nav" "lb" "rb1" "rb2" "rb3";
+    }
+    .right {
+      height: 100px;
+    }
+    #lb {
+      height: 100px;
+    }
+  }

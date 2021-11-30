@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Values</title>
+</head>
+<body>
+	<input type="text" name="name" id="name">
+	<select id="gender">
+		<option value="">--</option>
+		<option value="male">M</option>
+		<option value="female">F</option>
+	</select>
+	<input type="text" name="email" id="email">
+	<input type="number" name="mobile" id="mobile">
+	<hr>
+    <h1 id="dname">name</h1>
+    <h2 id="demail">Email</h2>
+    <h3 id="dmobile">MObile</h3>
+    <h4 id="dgender">Gender</h4>
+	<button onclick="showName()">NAME</button>
+	<button onclick="showGender()">GENDER</button>
+	<button onclick="showEmail()">EMAIL</button>
+	<button onclick="showMobile()">MOBILE</button>
+	<script type="text/javascript">
+		function showName() {
+			// Show the alert of the filled name
+            var x=document.getElementById("name").value;
+            document.getElementById("dname").textContent=alert(x);
+            
+
+		}
+
+		function showGender() {
+			// Show the alert of the selected Gender
+            var x=document.getElementById("gender").value;
+            document.getElementById("dgender").textContent=alert(x);
+		}
+
+		function showEmail() {
+			// Show the alert of the filled email
+            var x=document.getElementById("email").value;
+            document.getElementById("demail").textContent=alert(x);
+		}
+
+		function showMobile() {
+			// Show the alert of the filled mobile
+            var x=document.getElementById("mobile").value;
+            document.getElementById("dmobile").textContent=alert(x);
+		}
+	</script>
+</body>
+</html> 

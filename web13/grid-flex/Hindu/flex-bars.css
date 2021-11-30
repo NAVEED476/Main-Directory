@@ -1,0 +1,14 @@
+
+div>div{
+    width: 100px;
+    height: 200px;
+    background-color: aqua;
+    margin: 10px;
+}
+#cont{
+    display: flex;
+    margin-left: 35%;
+    margin-top: 10%;
+
+    
+}

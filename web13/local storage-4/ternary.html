@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ternanry</title>
+</head>
+
+<body>
+    <input id="ch" type="number" placeholder="enter age">
+    <button>click</button>
+</body>
+
+</html>
+<script>
+
+
+    // var age = 18;
+    // var msz = age >= 18 ? "yes" : (age < 23 ? "fast" : "ok")
+
+    var age = 18
+
+    document.querySelector("button").addEventListener("click", check)
+
+    
+
+    function check() {
+
+        var k=document.querySelector("input").value;
+
+
+          age < k ? alert("You can drive in India!") : 
+
+        (age > k ? alert("You can't drive in India!") :
+
+        alert("You are just old enough to drive in India!"))
+    }
+
+
+
+    // var speed = 90;
+    // var message = speed >= 120 ? 'Too Fast' : (speed >= 80 ? 'Fast' : 'OK');
+    // console.log(message);
+</script>

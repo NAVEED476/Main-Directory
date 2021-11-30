@@ -1,0 +1,117 @@
+#container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap:10px;
+    box-sizing: content-box;
+    
+    padding: 10px 10px 10px 10px ;
+}
+.box1{
+    
+    border: 1px solid blue;
+    padding: 10px 10px 10px 10px ;
+}
+
+.box2{
+    
+    border: 1px solid blue;
+    padding: 10px 10px 10px 10px ;
+    
+}
+.box3{
+    
+    border:1px solid green ;
+    
+}
+.s{
+    font-weight: bold;
+    color:blue;
+}
+
+img{
+    width:100%;
+    
+}
+
+#cont{
+    display: grid;
+    gap:10px;
+    grid-template-areas:"a b c""d e f";
+    
+    padding: 10px 10px 10px 10px ;
+}
+
+.b1{
+    grid-area: a;
+    border: 1px solid blue;
+    box-sizing: content-box;
+    align-content: center;
+    padding: 10px 10px 10px 10px ;
+    display: flex;
+}
+.b2{
+    grid-area: b;
+    border: 1px solid blue;
+    box-sizing: content-box;
+    align-content: center;
+    padding: 10px 10px 10px 10px ;
+    display: flex;
+}
+.b3{
+    grid-area: c;
+    border: 1px solid blue;
+    box-sizing: content-box;
+    align-content: center;
+    padding: 10px 10px 10px 10px ;
+    display: flex;
+}
+.b4{
+    grid-area: d;
+    border: 1px solid blue;
+    box-sizing: content-box;
+    align-content: center;
+    padding: 10px 10px 10px 10px ;
+    display: flex;
+}
+.b5{
+    grid-area: e;
+    border: 1px solid blue;
+    box-sizing: content-box;
+    align-content: center;
+    padding: 10px 10px 10px 10px ;
+    display: flex;
+}
+.b6{
+    grid-area: f;
+    border: 1px solid blue;
+    box-sizing: content-box;
+    align-content: center;
+    padding: 10px 10px 10px 10px ;
+    display: flex;
+
+}
+.i{
+    font-weight: bold;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+@media screen and (min-width:100px) and (max-width:400px){
+    #container{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+    }
+    #cont{
+        grid-template-areas: "a" "b" "c" "d" "e" "f";
+    }
+}
+@media screen and (min-width:401px) and (max-width:700px){  
+    #container{
+        display: flex;
+        align-content: center;
+    }
+    #cont{
+        grid-template-areas: "a b" "c d" "e f";
+    }
+}

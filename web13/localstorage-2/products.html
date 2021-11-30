@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>products</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: 24% 24% 24% 24%;
+            margin: auto;
+            border: 1px solid red;
+
+        }
+        .divclass{
+            border: 1px solid blue;
+            margin: 20px;
+            
+            
+        }
+        .btn{
+            width:40%;
+            margin-left: 5%;
+            border-radius: 20px;
+            color: white;
+            background-color: blue;
+            padding: 5px;
+        }
+        .btn:focus{
+            text-shadow: blue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Welcome to the products page</h1>
+    </div>
+    <div id="container"></div>
+
+
+</body>
+</html>
+<script>
+    var product=JSON.parse(localStorage.getItem("data"))
+    
+
+
+    displayitems(product);
+
+    var cart=JSON.parse(localStorage.getItem("cartdata"))||[];
+
+   product.forEach(function(item){
+       displayitems(item.name,item.price,item.img_url)
+   })
+
+   function displayitems(name,price,im_url){
+
+    var div1=document.createElement("div")
+    div1.setAttribute("class","divclass")
+      
+
+       var h1=document.createElement("h1")
+       h1.textContent=name;
+
+       var h2=document.createElement("h2")
+       h2.textContent=price;
+       var img=document.createElement("img")
+       img.setAttribute("src",im_url);
+
+       var btn=document.createElement("button")
+       btn.innerText="Add to cart"
+       btn.setAttribute("class","btn")
+
+
+       btn.addEventListener("click",function(){
+           addtocartitem(item);
+       })
+
+
+
+
+    div1.append(h1,h2,img,btn)
+    document.querySelector("#container").append(div1)
+   }
+
+   function addtocartitem(item){
+       cart.push(item)
+       localStorage.setItem("cartdata",JSON.stringify(cart))
+   }
+</script>

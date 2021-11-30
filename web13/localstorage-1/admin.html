@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin</title>
+</head>
+<body>
+    <h1> admin page</h1>
+
+   <form id="form">
+       <input type="text" placeholder="enter name">
+       <input type="number" placeholder="enter price">
+       <select id="select">
+           <option value="">tee</option>
+           <option value="">shoes</option>
+           <option value="">shirt</option>
+       </select>
+       <input id="img" type="text" placeholder="enter image url">
+       <input type="submit">
+   </form>
+</body>
+</html>
+<script>
+    var prod=JSON.parse(localStorage.getItem("shoppingbag"))||[]
+
+    document.querySelector("#form").addEventListener("submit",additem)
+
+    function additem(e){
+        e.preventDefault()
+
+
+        var product={
+            name:form.name.value,
+            price:form.price.value,
+            type:form.select.value,
+            img_url:form.img.value
+        }
+        prod.push(product)
+        localStorage.setItem("shoppingbag",JSON.stringify(product))
+    }
+</script>

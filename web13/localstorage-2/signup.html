@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+</head>
+<style>
+    input{
+        margin-bottom: 30px;
+    }
+</style>
+<body>
+    <h1>Create account</h1><br/>
+    <span>Your name</span><br/>
+    <input id="name" type="text"><br/>
+    <span>Mobile number or Emial</span><br/>
+    <input id="email" type="email"><br/>
+    <span>Password</span><br/>
+    <input id="pass" type="password"><br/>
+    <span>Password again</span><br/>
+    <input id="again" type="text"><br/>
+    <button>Continue</button>
+
+
+</body>
+</html>
+<script>
+    var arr=JSON.parse(localStorage.getItem("data"))||[]
+    document.querySelector("button").addEventListener("click",signup)
+
+
+    function signup(){
+        var name=document.getElementById("name").value;
+        var email=document.getElementById("email").value;
+        var pass=document.getElementById("pass").value;
+        var again=document.getElementById("again").value;
+
+
+
+
+        var list={
+            name:name,
+            email:email,
+            pass:pass,
+            again:again
+        }
+
+        arr.push(list)
+
+
+        localStorage.setItem("data", JSON.stringify(arr))
+
+        window.location.href="signin.html"
+    }
+</script>

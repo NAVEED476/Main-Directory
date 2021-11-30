@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>countries</title>
+</head>
+<body>
+    
+    <select name="country" id="contienent">
+        <option value="India">India</option>
+        <option value="United States of America">United States of America</option>
+        <option value="China">China</option>
+        <option value="Nepal">Nepal</option>
+        <option value="Australia">Australia</option>
+        <option value="France">France</option>
+        <option value="Germany">Germany</option>
+        <option value="South Africa">South Africa</option>
+        <option value="Nigeria">Nigeria</option>
+        <option value="Mexico">Mexico</option>
+        <option value="Argentina">Argentina</option>
+        <option value="Brazil">Brazil</option>
+        <option value="Canada">Canada</option>
+        <option value="Singapore">Singapore</option>
+        <option value="Sweden">Sweden</option>
+    </select>
+    <button onclick="myfunction()">Click here</button>
+</body>
+</html>
+<script>
+    function myfunction(){
+        var parent=document.getElementById("contienent").value;
+        switch(parent){
+            case "india" :
+                alert("Asia") 
+                break;
+            case "United States of America":
+                alert("North America")
+                break;
+            case "China":
+                alert("asia")
+                break;
+            case "Nepal":
+                alert("Asia")
+                break;
+            case "Australia":
+                alert("Australia")
+                break;
+            case "France":
+                alert("Europe")
+                break;
+            case "Germany":
+                alert("Europe")
+                break;
+            case "South Africa":
+                alert("Africa")
+                break;
+            case "Nigeria":
+                alert("Africa")
+                break
+            case "Mexico":
+                alert("South Africa")
+                break;
+            case "Argentina":
+                alert("SOuth Africa")
+                break;
+            case "Canada":
+                alert("North America")
+                break
+            case "Singapore":
+                alert("South America")
+                break;
+            case "Sweden":
+                alert("South America")
+                break
+        }
+    }
+</script>

@@ -1,0 +1,23 @@
+#one,#two,#three{
+    display:flex;
+    width:600px;
+    height:100px;
+    margin:10px;
+  }
+  div>div{
+    background-color:red;
+    width:120px;
+    margin:10px;
+    border-radius:20px;
+    
+  }
+  
+  #one div:nth-child(2){
+    flex-grow:1;
+  }
+  #two div:nth-child(1){
+    flex-grow:1;
+  }
+  #three div:nth-child(3){
+    flex-grow:1;
+  }

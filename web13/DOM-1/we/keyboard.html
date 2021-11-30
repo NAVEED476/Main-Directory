@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keyboard</title>
+    <style>
+        #container {
+        display: grid;
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 100px 100px 100px 100px;
+        grid-gap: 20px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+          rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+          rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        width: 340px;
+        padding: 20px;
+        margin: auto;
+      }
+
+      #container > button {
+        font-size: 30px;
+        background-color: black;
+        color: white;
+        border-radius: 10px;
+      }
+      #container > button:nth-last-child(1) {
+        background-color: red;
+      }
+
+      #out {
+        width: 370px;
+        height: 70px;
+        border: 1px solid grey;
+        font-size: 40px;
+        text-align: center;
+        margin: auto;
+        margin-bottom: 10px;
+        border-radius: 20px;
+        background-color: tomato;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+          rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+          rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+      }
+    </style>
+</head>
+<body>
+    <div id="out"></div>
+    <div id="container">
+      <button onclick="press('0')">0</button>
+      <button onclick="press('1')">1</button>
+      <button onclick="press('2')">2</button>
+      <button onclick="press('3')">3</button>
+      <button onclick="press('4')">4</button>
+      <button onclick="press('5')">5</button>
+      <button onclick="press('6')">6</button>
+      <button onclick="press('7')">7</button>
+      <button onclick="press('8')">8</button>
+      <button onclick="press('9')">9</button>
+      <button onclick="clearAll()">Clear</button>
+    </div>
+</body>
+</html>
+<script>
+    var res = "";
+  function press(num) {
+    res = res + num;
+    document.getElementById("out").textContent = res;
+  }
+
+  function clearAll() {
+    document.getElementById("out").textContent = "";
+  }
+</script>

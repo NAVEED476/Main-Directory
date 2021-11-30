@@ -1,0 +1,13 @@
+#one,#two,#three,#four,#five{
+    display: flex;
+    width: 600px;
+    height: 100px;
+    margin: 10px;
+}
+div>div{
+    width: 100px;
+    height: 10 0px;
+    background-color: aqua;
+    margin: 5px;
+    border-radius: 10px;
+}

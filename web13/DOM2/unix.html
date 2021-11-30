@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unix</title>
+    <style>
+        .class1{
+            width: 700px;
+            height: 650px;
+            border: 1px solid red;
+            margin: auto;
+        }
+        .class2{
+            width: 50%;
+            height: 41%;
+            margin: auto;
+            margin-top: 10px;
+        }
+        .class3{
+            width:80%;
+            height: 25%;
+            margin: auto;
+            margin-top: 15px;
+            display: flex   ;
+        }
+        .class4{
+            width:90%;
+            height:25%;
+            margin: auto;
+            margin-top: 15px;
+            display: flex;
+        }
+        .img1{
+            width:50%;
+            height: 70%;
+            margin-left:25%;
+            
+        }
+        .p1{
+            color:blue;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 0px;
+        }
+        .name{
+            margin-top: 0px;
+            text-align: center;
+        }
+        .p2{
+            text-align: center;
+
+        }
+        .img2{
+            width: 30%;
+            height: 100%;
+        }
+        div3>img{
+            width:30%;
+            height: 100%;
+        }
+        span{
+            color: red;
+            text-align:left;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .one,.two{
+            height: 90%;
+            margin: auto;
+            width: 49%;
+            background-color: rosybrown;
+        }
+        .two{
+            text-align: right;
+            
+        }
+        .one1,.two2{
+            margin-top: 130px;
+        }
+    </style>
+</head>
+<body>
+    <div id="maindiv"></div>
+    <button>click</button>
+</body>
+</html>
+<script>
+
+
+var parent=document.querySelector("#maindiv")
+    document.querySelector("button").addEventListener("click",fun)
+
+    function fun(){
+        var div1=document.createElement("div")
+
+        div1.setAttribute("class","class1")
+
+
+        var div2=document.createElement("div")
+        div2.setAttribute("class","class2")
+        var p=document.createElement("h1")
+        p.setAttribute("class","p1")
+        p.innerHTML="linus Torvalds"
+        var p1=document.createElement("h2")
+        p1.setAttribute("class","name")
+        p1.innerHTML="The Creator of Linux & Git"
+        var img=document.createElement("img")
+
+        img.setAttribute("class","img1")
+        img.src="https://masai-course.s3.ap-south-1.amazonaws.com/resources/images/linus.jpg"
+        div2.append(img,p,p1)
+
+
+        var div3=document.createElement("div")
+        div3.setAttribute("class","class3")
+
+        var img=document.createElement("img")
+        img.src="https://masai-course.s3.ap-south-1.amazonaws.com/resources/images/khan.jpg"
+        img.setAttribute("class","img2")
+        var p=document.createElement("p")
+        p.setAttribute("class","p2")
+        p.innerHTML="<span>SalKhan</span> <br> Salman khan is the founder of khan acadamy which has a mission of providing of free world class education to ever one"
+        div3.append(img,p)
+
+        var div4=document.createElement("div")
+        div4.setAttribute("class","class4")
+
+        var one=document.createElement("div")
+        one.setAttribute("class","one","one1")
+        one.innerHTML="<span>Ken Thompson</span><br> Designed and implementd the original operating system"
+        var two=document.createElement("div")
+        two.setAttribute("class","two","two2")
+        two.innerHTML="<span>dennies Ritchie</span> <br>he creator of c programming language"
+        
+
+        div4.append(one,two)
+
+        div1.append(div2,div3,div4)
+
+        parent.append(div1)
+    }
+</script>

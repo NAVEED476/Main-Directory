@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+</head>
+<body>
+
+    <h1>Sign in </h1>
+
+    <input  id="email" type="email"      placeholder="enter u r email">
+    <input  id="pass"  type="password"   placeholder="enter u r password">
+    <button>click</button>
+</body>
+</html>
+
+
+<script>
+
+
+
+
+
+
+document.querySelector("button").addEventListener("click",myfun)
+
+var arr=JSON.parse(localStorage.getItem("data"))
+
+
+function myfun(){
+     var email=document.getElementById("email").value
+     var pass=document.getElementById("pass").value
+
+
+
+   if(email=="admin" && pass=="admin"){
+
+
+        alert("successfully logged in")
+
+
+        window.location.href="admin.html"
+   }
+
+
+   else{
+       var signal=false
+        for(var i=0;i<arr.length;i++){
+            //console.log(previousdate[i])
+
+            if(arr[i].email == email
+             && arr[i].pass == pass)
+             {
+
+
+                //console.log("registerd user")
+                window.location.href="products.html"
+                
+                alert("welcome to new page")
+
+                signal=true
+                break
+                
+            }
+           
+          
+        }
+        if(!signal){
+            alert("mismatch")
+        }
+        
+        
+    
+   }
+     
+     
+}
+</script>

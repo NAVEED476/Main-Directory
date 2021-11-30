@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color-limit</title>
+   <style>
+       h1:hover{
+           font-weight: bold;
+           font-size: 32px;
+       }
+   </style>
+</head>
+<body>
+    <h1>The buttons color changes to a random value when it is clicked! But only two times!</h1>
+    <button>Click here to change my color!</button>
+</body>
+</html>
+
+<script>
+     document.querySelector("button").addEventListener("click",fun)
+     
+    
+
+     var count=0
+    function fun(){
+        if(count<2){
+        var arr=["red","blue","green"]
+       
+    
+          document.querySelector("h1").style.backgroundColor=arr[count]
+          count++
+          console.log(count)
+        }
+        
+    }
+   
+</script>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= device-width, initial-scale=1.0">
+    <title>registration.html</title>
+</head>
+<body>
+    <input placeholder="enter name" type="text" name="name" id="name" />
+    <select id="gender">
+      <option value="">--</option>
+      <option value="male">M</option>
+      <option value="female">F</option>
+    </select>
+    <input type="text" name="email" id="email" placeholder="Email" />
+    <input type="text" name="mobile" id="mobile" placeholder="Mobile" />
+    <hr />
+    <h1 id="dName">NAME</h1>
+    <h2 id="dGender">GENDER</h2>
+    <h3 id="dEmail">EMAIL</h3>
+    <h4 id="dMobile">MOBILE</h4>
+    <hr />
+    <button onclick="showName()">NAME</button>
+    <button onclick="showGender()">GENDER</button>
+    <button onclick="showEmail()">EMAIL</button>
+    <button onclick="showMobile()">MOBILE</button>
+    <button onclick="resetForm()">RESET FORM</button>
+</body>
+</html>
+<script>
+    function showName() {
+        // Show filled name inside h1
+        var x = document.getElementById("name").value;
+        document.getElementById("dName").textContent = x;
+      }
+
+      function showGender() {
+        // Show the selected gender inside h2
+        var x = document.getElementById("gender").value;
+        document.getElementById("dGender").textContent = x;
+      }
+
+      function showEmail() {
+        // Show the filled email inside h3
+        var c=document.getElementById("email").value;
+        document.getElementById("dEmail").textContent=c;
+      }
+
+      function showMobile() {
+        // Show the filled mobile inside h4
+        var c=document.getElementById("mobile").value;
+        document.getElementById("dMobile").textContent=c;
+      }
+
+      function resetForm() {
+        // Reset all the form elements to default values (blank "")
+        document.getElementById("name").value =""
+        document.getElementById("gender").value = "";
+        document.getElementById("mobile").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("dName").textContent=""
+        document.getElementById("dGender").textContent=""
+        document.getElementById("dMobile").textContent=""
+        document.getElementById("dEmail").textContent=""
+      }
+</script>

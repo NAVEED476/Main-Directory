@@ -1,0 +1,89 @@
+
+#main{
+    width: 800px;
+    height: 600px;
+    margin: auto;
+    
+    
+}
+
+h1{
+    font-size: 36px;
+    text-align: center;
+}
+.one{
+    display: flex;
+    margin-left: 20px;
+    width:96%;
+    height: 60%;
+    
+}
+one>div{
+    width:25%
+}
+div>img{
+    width: 90%;
+    height: 200px;
+}
+.txt{
+    margin-left: 20px;
+    color: red;
+    line-height: 10px;
+}
+.txt1{
+    line-height: 20px;
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.txt3{
+    line-height: 0px;
+    margin-left: 20px;
+    color: silver;
+}
+
+
+#two{
+    margin-left: 20px;
+    bottom: 1px solid red;
+    width: 96.5%;
+    height: 25%;
+    background-color: blue;
+    display: flex;
+    
+}
+.call{
+    width:30%;
+    height: 99%;
+    
+}
+.call>h1{
+    margin-left:20px;
+    font-size: 22px;
+    line-height: normal;
+    color: white;
+    text-align: left;
+}
+.ref{
+    margin-left: 9%;
+    width:60.1%;
+    height: 99%;
+    
+}
+
+.ref>div>.n{
+    
+    line-height: 90px;
+    margin:auto;
+    border: 1px solid red;
+    padding-right: 100px;
+    margin-left: 20px;
+}
+.n{
+    
+    font-size: 14px;
+    padding:10px 0px 10px 10px
+}
+.s{
+    line-height: 10px;
+}

@@ -1,0 +1,102 @@
+#cont{
+   
+    display: grid;
+    gap:10px;
+    grid-template-areas:
+    "a b"
+    "a c"
+    "a d"
+    "e f";
+}
+
+#box1{
+    background-color: blue;
+    grid-area:a;
+    box-sizing: border-box;
+
+}
+#box2{
+    grid-area:b;
+    background-color: yellow;
+    display: flex;
+    box-sizing: border-box;
+
+}
+#box3{
+    grid-area: c;
+    background-color: teal;
+   
+    box-sizing: border-box;
+
+    display: flex;
+}
+#box4{
+    grid-area: d;
+    background-color: yellow;
+
+    box-sizing: border-box;
+
+    display: flex;
+}
+#box5{
+    background-color: yellow;
+    grid-area:e;
+    display: flex;
+    box-sizing: border-box;
+
+
+}
+#box6{
+    background-color: yellow;
+    grid-area:f;
+    display: flex;
+    box-sizing: border-box;
+
+
+}
+.rimg{
+    width:100%;
+}
+.p1{
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.p2{
+    margin-top:0px;
+    margin-bottom: 0px;
+}
+.rimg1{
+    width:30%;
+    object-fit: cover;
+}
+
+b{
+    font-size: 22px;
+}
+.m{
+    margin-left: 40px;
+}
+.rimg2{
+    width: 30%;
+}
+p{
+    margin-left: 40px;
+}
+
+
+@media screen and (min-width:0px) and (max-width:300px){
+    #cont{
+        grid-template-areas: "a" "b" "c" "d" "e" "f" ;
+    }
+    
+}
+@media screen and (min-width:401px) and (max-width:800px){
+    #cont :nth-child(6){
+        display: none;
+    }
+    #cont{
+        grid-template-areas: "a a" "b c" "d e";
+    }
+   
+}

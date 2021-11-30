@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo</title>
+</head>
+<style>
+    td ,th{
+        border: 1px solid red;
+        padding: 10px;
+    }
+</style>
+<body>
+    <h1>TODO</h1>
+    <form>
+        <label for="">Name</label>
+
+        <input id="name" type="text" placeholder="name of th product">
+
+
+        <label for="">Quantity</label>
+
+        <input id="qty" type="number" placeholder="Qunatity">
+
+        <label for="">priority</label>
+
+        <select id="priority">
+
+            <option value="">--</option>
+            <option value="low">Low</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+        </select>
+        <input type="submit" id="Submit">
+    </form>
+    <button>Delete All</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Qunatity</th>
+                <th>Priority</th>
+                <th>Delete</th>
+                
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</body>
+</html>
+
+
+
+<script>
+    document.querySelector("form").addEventListener("submit",additem)
+
+    function additem(event){
+        event.preventDefault()
+
+        var name=document.getElementById("name").value
+        var qty=document.getElementById("qty").value
+        var pri=document.getElementById("priority").value
+
+
+        var row=document.createElement("tr")
+
+
+        var td1=document.createElement("td")
+        td1.textContent=name
+        var td2=document.createElement("td")
+        td2.textContent=qty
+        var td3=document.createElement("td")
+        td3.textContent=pri
+
+        if(pri=="High"){
+            td3.style.backgroundColor="red"
+        }
+        var td4=document.createElement("td")
+        td4.textContent="delete"
+        td4.addEventListener("click",deleteitem)
+
+        row.append(td1,td2,td3,td4)
+
+
+        var tbody=document.querySelector("tbody")
+        tbody.append(row)
+
+        function deleteitem(event) {
+            console.log(event.target);
+            event.target.parentNode.remove();
+        }
+
+        document.querySelector("button").addEventListener("click",del)
+
+        function del(){
+            
+            row.remove()
+        }
+
+
+
+    }
+</script>

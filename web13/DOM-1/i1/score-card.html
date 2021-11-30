@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>score card</title>
+    <style>
+        .maindiv{
+            width:300px;
+            height:500px;
+            border:1px solid red;
+            margin: auto;
+        }
+        .compare{
+            width:90%;
+            height:20%;
+            margin: auto;
+            margin-top: 10px;
+            display: flex;
+        }
+        
+        .max{
+            width:40%;
+            height: 70%;
+            margin: auto;
+            border: 1px solid red;
+            font-size: 22px;
+            overflow: auto;
+            
+        }
+        .max>p{
+           margin: 70% 0% 0% 35%;
+           font: bold;
+           font-size: 22px;
+           color: blue;
+           
+        }
+        .middle{
+            margin: auto;
+            width:90%;
+            height:10%;
+            border: 1px solid black;
+            background-color: tomato;
+            color: white;
+            font-size: 28px;
+            margin-top: 10px;
+            text-align: center;
+            
+        }
+        .s{
+            margin-top: 20px;
+            text-align: center;
+            margin-bottom: 0px;
+        }
+        #keyboard{
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: 90px 90px 90px;
+            
+            gap: 10px;
+            margin-left: 5px;
+        }
+        .b{
+            height: 30px;
+        }
+        .zero{
+            height: 30px;
+            margin: auto;
+            margin-left: 35%;
+            margin-top: 10px;
+            width: 90px;
+        }
+        .sub{
+            width:150px;
+            height:40px;
+            background-color: black;
+            color: white;
+            font-size: medium;
+            margin-top: 30px;
+            margin-left: 24%;
+        }
+    
+    </style>
+</head>
+<body>
+    
+    <div class="maindiv">
+        <div class="compare">
+            <div class="max" id="maxscore">
+                <p>max</p>
+            </div>
+            
+            <div class="max" id="minscore">
+                <p>min</p>
+            </div>
+            
+        </div>
+        <h2 class="s">Score</h2>
+        <div class="middle" id="scores">
+
+        </div>
+        <div id="keyboard">
+            <button class="b" onclick="press('1')">1</button>
+            <button class="b" onclick="press('2')">2</button>
+            <button class="b" onclick="press('3')">3</button>
+            <button class="b" onclick="press('4')">4</button>
+            <button class="b" onclick="press('5')">5</button>
+            <button class="b" onclick="press('6')">6</button>
+            <button class="b" onclick="press('7')">7</button>
+            <button class="b" onclick="press('8')">8</button>
+            <button class="b" onclick="press('9')">9</button>
+            
+        </div>
+        <button class="zero" onclick="press('0')">0</button>
+        <button class="sub" id="submit">Submit</button>
+    </div>
+</body>
+</html>
+<script>
+    var score=""
+    var min=42
+    var max=2019
+    function press(num){
+        score=score+num
+        document.getElementById("scores").textContent=score;
+
+        document.getElementById("submit").addEventListener("click",comparescore)
+
+    }
+        function comparescore(){
+            if(score>max){
+                max=score
+                document.getElementById("maxscore").textContent=score;
+                
+                
+            }
+            
+            else if(score<min){
+                min=score
+                
+                document.getElementById("minscore").textContent=score;
+            }
+            document.getElementById("scores").textContent=" ";
+            score=" "
+
+            
+        
+        
+
+        
+
+    }
+</script>
