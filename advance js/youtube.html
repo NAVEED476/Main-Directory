@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>youtube</title>
+    <style>
+        #side {
+
+            float: left;
+            height: 600px;
+            margin-top: 30px;
+            list-style: none;
+            font-size: 18px;
+            overflow: scroll;
+            overflow: var(search);
+
+        }
+
+        li {
+
+            padding: 6px;
+            margin-top: 2px;
+            margin-left: 5px;
+            border-radius: 2px;
+            padding-right: 50px;
+        }
+
+        li:hover {
+            background-color: lightblue;
+        }
+
+        #searchbar {
+            width: 50%;
+            border: 1px solid black;
+            margin: auto;
+            margin-left: 100px;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 16px;
+
+
+        }
+
+        #main {
+            width: 79%;
+            height: 200px;
+            border: 1px solid green;
+            margin-left: 1%;
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(4,20%);
+            
+        }
+
+        #parent {
+            display: flex;
+        }
+
+        .logo {
+            width: 4%;
+            margin-top: 20px;
+        }
+
+        .ser {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img class="logo"
+            src="data:image/png;base64,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"
+            alt="">
+        <input type="text" id="searchbar" placeholder="search for results">
+        <button class="ser" onclick="searchmovies()">search</button>
+       
+    </div>
+    
+
+
+
+    <div style="display: flex;">
+        <div id="side">
+            <li>Home</li>
+            <li>Explore</li>
+            <li>Subscriptions</li>
+            <hr>
+            <li>Library</li>
+            <li>History</li>
+            <li>your videos</li>
+            <li>Watch Later</li>
+            <li>Liked Videos</li>
+            <hr>
+            <li>Subscriptions</li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </div>
+        <div id="main"></div>
+    </div>
+</body>
+
+</html>
+<script>
+
+    let maindiv=document.getElementById("main")
+
+    let api = "AIzaSyC2YDYVCgntDjL7plh-zYuM41CLLK03Ofo";
+
+    async function searchmovies() {
+        let inp = document.getElementById("searchbar").value;
+
+        let response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=${inp}&key=${api}&type=video&maxResults=30`)
+
+        let data = await response.json();
+
+        let data_items=data.items
+
+
+        appendvideos(data_items)
+
+        console.log(data)
+
+    }
+
+
+    let appendvideos = (arr) => {
+        arr.forEach(({ id: { videoId } }) => {
+            console.log(videoId)
+
+            let div=document.createElement("div")
+
+            let iframe=document.createElement("iframe")
+
+            iframe.src=`https://www.youtube.com/embed/${videoId}`
+
+
+            div.append(iframe)
+
+            maindiv.append(div)
+        })
+    }
+</script>

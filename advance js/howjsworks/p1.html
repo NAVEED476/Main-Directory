@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>multiple</title>
+</head>
+
+<body>
+    <button id="main">Submit</button>
+    <p id="main2"></p>
+</body>
+
+</html>
+<script>
+
+
+    var parent = document.getElementById("main").addEventListener("click", show)
+
+
+    function construct(n) {
+            this.name = n
+            
+
+
+
+        }
+
+
+    function show() {
+
+
+
+        let main = new construct("n")
+        let main1 = new construct("na")
+        let main2 = new construct("nav")
+        let main3 = new construct("nave")
+        let main4 = new construct("navee")
+        let main5 = new construct("naveed")
+
+        console.log(main)
+        console.log(main1)
+        console.log(main2)
+        console.log(main3)
+        console.log(main4)
+        console.log(main5)
+
+
+
+        let parent2=document.getElementById("main2").textContent=main
+
+
+        
+
+    }
+
+    show()
+
+
+</script>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Seat Availibility Notifier</h1>
+
+    <button onclick="checkAvailability()">Register</button>
+</body>
+
+</html>
+<script>
+
+    let BtoG = ["swanand", "maya", "bob", "ronaldo", "maya", "bob", "ronaldo", "maya", "bob", "ronaldo", "maya", "bob", "ronaldo"];
+    let MtoG = ["swanand", "maya", "bob", "ronaldo", "maya", "bob", "ronaldo", "maya", "bob", "ronaldo", "maya", "bob", "ronaldo"];
+    let PtoG = ["swanand", "maya", "bob", "ronaldo", "maya", "bob", "ronaldo", "maya", "bob", "ronaldo", "maya", "bob", "ronaldo"];
+
+    async function checkAvailability() {
+        let promise = new Promise(function (resolve, reject) {
+            setInterval(function () {
+                if (BtoG.length < 5) {
+                    resolve(`train 1 is available`);
+                 
+                    clearInterval(interval);
+                
+                    
+                    
+                } else if (MtoG.length < 5) {
+                    resolve(`train 2 is available`);
+                    clearInterval(interval);
+                } else if (PtoG.length < 5) {
+                    resolve(`train 3 is available`);
+                    clearInterval(interval);
+                }
+            }, 1000);
+        });
+
+        let res = await promise;
+        console.log("res:", res);
+    }
+
+    function cancelTicket() {
+        let cancelling_speed1 = Math.ceil(Math.random() * 5);
+        let cancelling_speed2 = Math.floor(Math.random() * 5);
+        let cancelling_speed3 = Math.floor(Math.random() * 2);
+
+        setTimeout(function () {
+            BtoG.pop();
+        }, cancelling_speed1 * 1000);
+
+        setTimeout(function () {
+            MtoG.pop();
+        }, cancelling_speed2 * 1000);
+
+        setTimeout(function () {
+            PtoG.pop();
+        }, cancelling_speed3 * 1000);
+
+        console.log(BtoG, MtoG, PtoG);
+    }
+
+    var interval = setInterval(cancelTicket, 1000);
+
+
+
+</script>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>second</title>
+</head>
+
+<style>
+    #wall{
+        display: grid;
+        grid-template-columns: repeat(4,20%);
+        gap: 15%;
+
+    }
+
+    img{
+        width: 200px;
+        height: 150px;
+    }
+
+  
+</style>
+
+<body>
+    <div id="wall"></div>
+</body>
+
+</html>
+
+<script>
+    let url = "https://fakestoreapi.com/products"
+
+    async function getproducts() {
+        const res = await (fetch(url))
+        console.log(res)
+
+        const data = await res.json()
+
+
+        console.log(data)
+        appendproducts(data)
+    }
+
+    function appendproducts(products) {
+        products.forEach(function (products) {
+
+            let main = document.createElement("div")
+
+            let img = document.createElement("img")
+            img.src = products.image;
+
+            let title = document.createElement("p")
+            title.textContent = products.title
+
+
+            let price = document.createElement("p")
+            price.textContent = products.price;
+
+
+            let desc = document.createElement("p")
+
+            desc.innerText =products.description;
+
+            main.append(img,title,price,desc)
+
+            wall.append(main)
+
+        })
+    }
+
+    getproducts()
+
+
+
+
+
+</script>

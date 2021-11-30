@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search E ngine</title>
+    <style>
+        #input {
+            width: 200px;
+        }
+
+        #movies {
+            height: 200px;
+            width: 200px;
+            border: 1px solid red;
+            border-top: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="text" id="query" oninput="debounce(searchmovies(),delay)" placeholder="search for things">
+   
+
+    <div id="movies"></div>
+</body>
+
+</html>
+
+<script>
+
+    let moviesdiv=document.getElementById("movies")
+
+
+    let key = "f3137938"
+
+
+    async function searchmovies() {
+        try {
+            let name = document.getElementById('query').value;
+
+
+
+            let res = await fetch(`http://www.omdbapi.com/?s=${name}&apikey=${key}`)
+
+
+
+            let data = await res.json()
+
+            //return data.Search;
+
+            console.log(data)
+        }
+        catch (err) {
+            console.log("err", err)
+        }
+
+    }
+
+    async function disaplymovies() {
+        let moviedata = await searchmovies();
+
+        if (moviedata === undefined) {
+            return false
+        }
+        console.log("movie_data", moviedata)
+
+        moviedata.forach(function (movie) {
+            let p = document.createElement("p")
+            p.innerText = movie.Title
+
+
+
+
+            moviesdiv.append(p)
+        })
+    }
+
+
+</script>

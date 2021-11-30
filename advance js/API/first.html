@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main"></div>
+</body>
+
+</html>
+<script>
+
+   let parent= document.getElementById("main")
+    let url = "https://reqres.in/api/users?page=2";
+    let data = []
+
+
+    fetch(url)
+        .then(function (res) {
+            return  res.json()
+        })
+        .then(function (res) {
+            data = res.data
+
+            console.log(data)
+
+            showproducts(data)
+        })
+
+
+        function showproducts(d){
+            d.forEach(function(el){
+                let div=document.createElement("div")
+
+
+                let image=document.createElement("img")
+
+                image.src=el.avatar
+
+                let name=document.createElement("p")
+                name.innerText=`${el.first_name} ${el.last_name}`
+
+                let email=document.createElement("p")
+                email.innerText=el.email
+
+
+                div.append(image,name,email)
+
+
+                parent.append(div)
+
+            })
+        }
+
+        
+
+
+</script>

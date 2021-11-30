@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>omdib</title>
+</head>
+
+<body>
+    <input type="text" id="movie">
+    <button onclick="search()">search</button>
+
+    <div id="wall"></div>
+</body>
+
+</html>
+
+<script>
+
+    let key = "f3137938"
+
+
+    let wall=document.getElementById("wall")
+    
+
+    async function search() {
+
+        let input=document.getElementById("movie").value;
+
+
+        let url = `http://www.omdbapi.com/?i=tt3896198&apikey=f3137938`
+
+
+      
+        let res = await fetch(url)
+
+        let data = await res.json()
+
+
+        console.log(data)
+
+        show(data)
+    }
+
+
+    function show(products){
+
+
+        let div=document.createElement("div")
+
+        let img=document.createElement("img")
+
+        img.src=products.Poster
+
+        let title=document.createElement("p")
+        title.textContent="Title -    "+products.Title
+
+
+        let name=document.createElement("p")
+        name.textContent="Name -    "+products.Name
+
+        let year=document.createElement("p")
+        year.textContent="Year -    "+products.Year
+
+        let rating=document.createElement("p")
+        rating.textContent="rating -    "+products.imdbRating
+
+        div.append(img,title,name,year,rating)
+
+        wall.append(div)
+    }
+
+    search()
+</script>

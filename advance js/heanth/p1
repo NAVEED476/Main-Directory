@@ -1,0 +1,11 @@
+var arr=[1,2,3,4,5,6,7]
+var target=10
+
+question are
+1. iterate thorough the array take only sum of two variables and find the target is present or not?
+2. write code for factorial of number?
+
+
+
+
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <style>
+        #movies {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            border-top: none;
+
+            overflow: scroll;
+        }
+
+        input {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" oninput="showitems()" id="query">
+    <div id="movies"></div>
+</body>
+
+</html>
+
+<script>
+
+    let movie_div = document.getElementById("movies")
+
+    let key = "f3137938";
+    async function searchmovies() {
+        try {
+            let name = document.getElementById("query").value;
+            let response = await fetch(`http://www.omdbapi.com/?s=${name}&apikey=${key}`)
+            let data = await response.json()
+
+            console.log("data:", data)
+
+            return data.Search;
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
+
+    async function showitems() {
+
+        movie_div.innerHTML = null;
+
+        let moviedata = await searchmovies();
+
+        if (moviedata === undefined) {
+            return false
+        }
+
+        //console.log("moviedata:", moviedata)
+
+
+        moviedata.forEach(function (movie) {
+            let p1 = document.createElement("p")
+            p1.innerText = movie.Title;
+
+            console.log(p1)
+
+
+            movie_div.append(p1)
+        })
+
+    }
+</script>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome to home page</title>
+    <style>
+        .one {
+            font-weight: bold;
+            margin-left: 10%;
+
+        }
+
+        .main {
+            display: flex;
+            list-style: none;
+            margin-left: 70%;
+        }
+
+        input {
+            margin-top: 20px;
+            padding: 10px;
+        }
+
+        button {
+            padding: 5px;
+            margin-top: 10px;
+        }
+        .firstdiv{
+            width: 40%;
+            height: 400px;
+            border: 1px solid red;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>welcome to home page</h1>
+    <div class="main">
+        <li class="one" id="home">Home</li>
+        <li class="one" id="login">Login</li>
+        <li class="one" id="signup">Signup</li>
+    </div>
+    <!-- <input type="text" id="image" placeholder="name of the prodect"><br>
+    <input type="url" id="link" placeholder="link of the product"><br>
+    <input type="number" id="num" placeholder="price of the product"><br>
+    <button onclick="sumbit()">submit</button> -->
+
+
+    <form id="form">
+        <input type="url" id="link">
+        <input type="submit">
+    </form>
+</body>
+
+</html>
+
+<script>
+    let h = document.getElementById("home").addEventListener("click", hm)
+
+    let l = document.getElementById("login").addEventListener("click", log)
+
+    let s = document.getElementById("signup").addEventListener("click", sign)
+
+    function hm() {
+        window.location.href = "home.html"
+    }
+
+    function log() {
+        window.location.href = "login.html"
+    }
+    function sign() {
+        window.location.href = "signup.html"
+    }
+
+
+    if (localStorage.getItem("cartdata") === null) {
+        localStorage.setItem("cartdata", JSON.stringify([]))
+    }
+
+
+    
+    document.getElementById("form").addEventListener("submit",item)
+
+    function item(){
+        img:form.img.value;
+    }
+    
+
+   
+
+</script>

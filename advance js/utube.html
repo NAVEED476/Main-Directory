@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube</title>
+</head>
+<style>
+    #main{
+        display: grid;
+        grid-template-columns: repeat(4,20%);
+        grid-gap: 5%;
+        justify-content:space-evenly;
+        margin-top: 5%;
+    }
+</style>
+<body>
+
+    <div id="main"></div>
+    <input type="text" id="search"/>
+    <button onclick="searchforvideos()">search</button>
+</body>
+</html>
+<script>
+
+    let searchresult=document.getElementById("main")
+
+
+    let api="AIzaSyC2YDYVCgntDjL7plh-zYuM41CLLK03Ofo";
+
+
+    async function searchforvideos(){
+
+        try{
+
+        let inp=document.getElementById("search").value;
+        let respose=await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=${inp}&key=${api}&type=video&maxResults=30`)
+
+
+        let data=await respose.json();
+
+
+        let array_of_videos=data.items;
+
+        appendvideos(array_of_videos)
+
+        console.log(data)
+        }
+        catch(err){
+            console.log("error ")
+        }
+
+
+    }
+
+    function appendvideos(arr){
+        arr.forEach(({id: {videoId}})=>{
+            console.log("videoid",videoId)
+
+
+            let div=document.createElement("div")
+
+
+            let iframe=document.createElement('iframe')
+            iframe.src=`https://www.youtube.com/embed/${videoId}`
+
+            iframe.width="550px"
+
+            iframe.height="200px"
+
+            iframe.setAttribute("allowfullscreen",true)
+
+            div.append(iframe)
+
+            searchresult.append(div)
+
+        })
+    }
+
+
+
+</script>

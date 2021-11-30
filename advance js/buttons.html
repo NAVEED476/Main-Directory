@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click</title>
+</head>
+<style>
+    #objects,#arrays,#strings,#Numbers,#unde,#null,#function{
+        display: none;
+        list-style: none;
+    }
+    .fir{
+        margin-top: 30px;
+        color: rgb(65, 35, 35);
+    }
+</style>
+<body>
+    <h1>When u click once the data appears and when u give double click the data will not be visible</h1>
+    <button id="obj">objects</button>
+    <button id="arr">arrays</button>
+    <button id="str">strings</button>
+    <button id="num">Numbers</button>
+    <button id="un">undefined</button>
+    <button id="nu">null</button>
+    <button id="func">Functions</button>
+    <div id="all">
+        <div id="objects">
+            <li>A data object is a region of storage that contains a value or group of values</li>
+            <li>Each value can be accessed using its identifier or a more complex expression</li>
+            <li>that refers to the object.</li>
+            <li>In addition, each object has a unique data type.</li>
+            <li>object keys are unique</li>
+        </div>
+        <div id="arrays">
+            <li>In computer science, an array type is a data type that represents a collection of elements</li>
+            <li>each selected by one or more indices (identifying keys) that can be computed at run time during program execution</li>
+            <li> Such a collection is usually called an array variable, array value</li>
+            <li>simply array.[1] By analogy with the mathematical concepts vector and matrix,</li>
+            <li>array types with one and two indices are often called vector type and matrix type,</li>
+        </div>
+        <div id="strings">
+            <li> string data type is traditionally a sequence of characters, either as a literal constant or as some kind of variable.</li>
+            <li>he latter may allow its elements to be mutated and the length changed</li>
+            <li>it may be fixed (after creation). A string is generally considered a data type</li>
+            <li>often implemented as an array data structure of bytes</li>
+            <li>that stores a sequence of elements, typically characters, using some character encoding.</li>
+        </div>
+
+        <div id="Numbers">
+            <li>Data are the actual pieces of information that you collect through your study. For example, if you ask five of your friends how many pets they own,</li>
+            <li>hey might give you the following data: 0, 2, 1, 4, 18. (The fifth friend might count each of their aquarium</li>
+            <li>fish as a separate pet — and who are we to take that from them?) Not all data are numbers; let’s say</li>
+            <li>you also record the gender of each of your friends,</li>
+            <li>getting the following data: male, male, female, male, female.</li>
+        </div>
+
+        <div id="unde">
+            <li>The undefined type is a primitive type that has one value undefined.            </li>
+            <li>By default, when a variable is declared but not initialized, it is assigned the value undefined.
+
+            </li>
+            <li>t’s important to note that the  typeof operator also returns undefined </li>
+            <li>when you call it on a variable that hasn’t been declared:</li>
+            <li> The type of counter is also undefined.</li>
+        </div>
+
+        <div id="null">
+            <li>The null type is the second primitive data type that also has only one value: null. 
+
+            </li>
+            <li>Javascript defines that null is an empty object pointer</li>
+            <li>JavaScript defines that null is equal to undefined as shown in the following statement.
+
+            </li>
+            <li>whether the object is null or not </li>
+            <li>object to null so that you can check</li>
+        </div>
+
+        <div id="function">
+            <li>Data functions are the nuts and bolts of the digital world.</li>
+            <li>n development, they allow programmers to exchange </li>
+            <li>directly with a database and modify object in-line</li>
+            <li>In Excel, they query, create, and modify arrays. In math,</li>
+            <li>hey allow statisticians to address datasets using Sigma (Σ) and Pi (∏) notation.</li>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+
+    var first=document.getElementById("obj")
+    first.addEventListener("click",()=>{
+        document.getElementById("objects").style.display="block"
+        document.getElementById("objects").setAttribute("class","fir")
+    })
+    first.addEventListener("dblclick",()=>{
+        document.getElementById("objects").style.display="none"
+
+    })
+    
+
+
+
+    document.getElementById("arr").addEventListener("click",()=>{
+        document.getElementById("arrays").style.display="block"
+        document.getElementById("arrays").setAttribute("class","fir")
+
+    })
+    document.getElementById("arr").addEventListener("dblclick",()=>{
+        document.getElementById("arrays").style.display="none"
+    })
+
+    document.getElementById("str").addEventListener("click",()=>{
+        document.getElementById("strings").style.display="block"
+        document.getElementById("strings").setAttribute("class","fir")
+
+    })
+    document.getElementById("str").addEventListener("dblclick",()=>{
+        document.getElementById("strings").style.display="none"
+    })
+
+
+    document.getElementById("num").addEventListener("click",()=>{
+        document.getElementById("Numbers").style.display="block"
+        document.getElementById("Numbers").setAttribute("class","fir")
+
+    })
+    document.getElementById("num").addEventListener("dblclick",()=>{
+        document.getElementById("Numbers").style.display=""
+    })
+
+    document.getElementById("un").addEventListener("click",()=>{
+        document.getElementById("unde").style.display="block"
+        document.getElementById("unde").setAttribute("class","fir")
+
+    })
+    document.getElementById("un").addEventListener("dblclick",()=>{
+        document.getElementById("unde").style.display=""
+    })
+
+    document.getElementById("nu").addEventListener("click",()=>{
+        document.getElementById("null").style.display="block"
+        document.getElementById("null").setAttribute("class","fir")
+
+    })
+
+    document.getElementById("nu").addEventListener("dblclick",()=>{
+        document.getElementById("null").style.display=""
+    })
+
+
+    document.getElementById("func").addEventListener("click",()=>{
+        document.getElementById("function").style.display="block"
+        document.getElementById("function").setAttribute("class","fir")
+
+    })
+    document.getElementById("func").addEventListener("dblclick",()=>{
+        document.getElementById("function").style.display=""
+    })
+
+  
+</script>

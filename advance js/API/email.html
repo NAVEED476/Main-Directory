@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>email</title>
+</head>
+<style>
+    iframe {
+        margin-top: 30px;
+        float: right;
+        margin-left: 20%;
+        
+    }
+
+    input {
+        margin-top: 10px;
+    }
+    #one{
+        margin-top: 30px;
+    }
+</style>
+
+<body style="display:flex">
+    <div id="one">
+
+        <input type="text" id="city">
+        <button onclick="getweather()">serach</button>
+
+        <div id="main"></div>
+    </div>
+
+    <iframe width="800" height="500" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDYMuYR35t_88QT08f7IQlxTQ-vFmmStTY
+    &q=Space+Needle,Seattle+WA">
+    </iframe>
+
+
+</body>
+
+</html>
+
+
+<script defer src="/your-path-to-fontawesome/js/brands.js">
+   
+  
+
+
+
+
+
+    var key = "00e1066df152855de0ff69878024b778"
+
+
+    let parent = document.getElementById("main")
+
+
+
+
+
+    async function getweather() {
+
+
+        let inp = document.getElementById("city").value;
+        var url = `https://api.openweathermap.org/data/2.5/weather?q=${inp}&appid=${key}`;
+
+
+
+
+
+
+        ////https://developers.google.com/maps/documentation/embed/get-api-key googel link
+
+
+        //// https://developers.google.com/maps/documentation/embed/get-api-key  api-keys
+
+
+        /// https://apilist.fun/  api fun,,,,,,
+
+        const res = await fetch(url);
+
+
+        let data = await res.json()
+
+
+
+
+        console.log("data:", data)
+        //console.log("check:",data.weather.description)
+
+
+        appendata(data)
+
+    }
+
+    function appendata(product) {
+
+
+
+
+
+
+        let maindiv = document.createElement("div")
+
+        let mintemp = document.createElement("p")
+
+        mintemp.textContent = "temp_min:     "+product.main.temp_min;
+
+        let maxtemp = document.createElement("p")
+
+        maxtemp.textContent ="temp_max:     " +product.main.temp_max
+
+        let w = document.createElement("p")
+
+        w.textContent ="weather Description:   "+ product.weather.description;
+
+        let c = document.createElement("p")
+
+        c.textContent ="clouds data:    "+ product.clouds.all;
+
+        let sr = document.createElement("p")
+
+        sr.textContent ="sunrise:    "+ product.sys.sunrise;
+
+        let ss = document.createElement("p")
+
+        ss.textContent ="sunset:    "+product.sys.sunset;
+
+        let wind = document.createElement("p")
+
+        wind.textContent ="wind:     "+ product.wind.speed
+
+
+        maindiv.append(mintemp, maxtemp, c, sr, ss, wind)
+
+
+        parent.append(maindiv)
+
+
+
+    }
+
+
+</script>

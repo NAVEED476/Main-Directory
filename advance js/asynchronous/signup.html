@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <style>
+        .one {
+            font-weight: bold;
+            margin-left: 10%;
+
+        }
+
+        .main {
+            display: flex;
+            list-style: none;
+            margin-left: 70%;
+        }
+
+        input {
+            margin-top: 20px;
+            padding: 10px;
+        }
+    </style>'
+</head>
+
+<body>
+    <h1>signup page</h1>
+    <div class="main">
+        <li class="one" id="home">Home</li>
+        <li class="one" id="login">Login</li>
+        <li class="one" id="signup">Signup</li>
+    </div>
+    <form id="form1">
+        <input type="text" id="name" placeholder="enter u r name"><br>
+        <input type="number" id="number" placeholder="enter mobile number"><br>
+        <input type="email" id="email" placeholder="enter email address"><br>
+        <input type="password" id="password" placeholder="enter u password">
+        <input type="submit" onclick="mainfunction()">
+    </form>
+</body>
+
+</html>
+<script>
+    let h = document.getElementById("home").addEventListener("click", hm)
+
+    let l = document.getElementById("login").addEventListener("click", log)
+
+    let s = document.getElementById("signup").addEventListener("click", sign)
+
+    function hm() {
+        window.location.href = "home.html"
+    }
+
+    function log() {
+        window.location.href = "login.html"
+    }
+    function sign() {
+        window.location.href = "signup.html"
+    }
+
+
+
+
+    function mainfunction(e) {
+        //e.preventDefault()
+
+        var firstname = document.getElementById("name").value;
+        var firstnumber = document.getElementById("number").value;
+        var firstmail = document.getElementById("email").value;
+        var firstpassword = document.getElementById("password").value;
+
+
+
+
+
+        if (localStorage.getItem("userdata") === null) {
+            localStorage.setItem("userdata", JSON.stringify([]))
+        }
+
+
+        let user = {
+            name: firstname,
+            number: firstnumber,
+            email: firstmail,
+            password: firstpassword
+        };
+
+
+        
+
+        if (firstname == "" || firstnumber == "" || firstmail == "" || firstpassword == "") {
+            alert("invalid credentilas")
+        }
+        else {
+
+            let arr = JSON.parse(localStorage.getItem("userdata"))
+            arr.push(user)
+            localStorage.setItem("userdata", JSON.stringify(arr))
+
+                firstname = "";
+                firstnumber = "";
+                firstmail = "";
+                firstpassword = "";
+                
+
+               
+        }
+
+       
+
+    }
+
+
+</script>

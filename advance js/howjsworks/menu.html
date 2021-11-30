@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+</head>
+<body>
+    <h1>Welcome to menu page</h1>
+    <input type="text" id="inp" placeholder="enter any name">
+</body>
+</html>
+
+<script>
+
+
+    async function data1(){
+
+        let inputdata=document.getElementById("inp").value;
+        let response=await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata`)
+
+        let data=await response.json()
+
+        console.log(data)
+    }
+    data1()
+
+</script>t

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+        .one {
+            font-weight: bold;
+            margin-left: 10%;
+
+        }
+
+        .main {
+            display: flex;
+            list-style: none;
+            margin-left: 70%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>login page</h1>
+    <div class="main">
+        <li class="one" id="home">Home</li>
+        <li class="one" id="login">Login</li>
+        <li class="one" id="signup">Signup</li>
+    </div>
+    <form action="">
+
+        <input type="email" id="email" placeholder="email">
+        <input type="password" id="password" placeholder="password">
+        <input type="submit" onclick="signinbest(event)">
+    </form>
+</body>
+
+</html>
+
+<script>
+    let h = document.getElementById("home").addEventListener("click", hm)
+
+    let l = document.getElementById("login").addEventListener("click", log)
+
+    let s = document.getElementById("signup").addEventListener("click", sign)
+
+    function hm() {
+        window.location.href = "home.html"
+    }
+
+    function log() {
+        window.location.href = "login.html"
+    }
+    function sign() {
+        window.location.href = "signup.html"
+    }
+
+
+    function signinbest(e){
+        e.preventDefault();
+        let email = document.getElementById("email").value;
+        let password = document.getElementById('password').value;
+
+        let par = JSON.parse(localStorage.getItem("userdata"))
+
+        var a = 0;
+        if(email == "" || password == ""){
+            alert("Incomplete Credentials")
+        } else {
+            par.forEach(function(par){
+                if(email == par.email && password == par.password){
+                    a++;    
+                }
+            });
+            if(a>0){
+                
+                alert('Signed In Successfully');
+                window.location.href = "home.html"
+            } else {
+                alert('Invalid Credentials')
+            }
+        }
+       
+    }
+
+
+</script>
