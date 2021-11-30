@@ -1,0 +1,19 @@
+{
+  "name": "inquirer",
+  "version": "1.0.0",
+  "description": "my inquirer",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "echo hiiii",
+    "poststart": "echo bye",
+    "start": "node index.js",
+   
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "dependencies": {
+    "inquirer": "^8.1.2"
+  }
+}

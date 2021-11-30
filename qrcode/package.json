@@ -1,0 +1,19 @@
+{
+  "name": "naveed",
+  "version": "1.0.0",
+  "description": "navee",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "start": "node ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^8.2.0",
+    "qrcode": "^1.4.4"
+  }
+}

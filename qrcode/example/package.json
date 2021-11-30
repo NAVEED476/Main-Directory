@@ -1,0 +1,18 @@
+{
+  "name": "naveed",
+  "version": "1.0.0",
+  "description": "y first one",
+  "main": "index.js",
+  "scripts": {
+    "start": "one",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "naveed",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^8.3.0",
+    "inquirer": "^8.2.0",
+    "qrcode": "^1.4.4"
+  },
+  "devDependencies": {}
+}
